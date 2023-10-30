@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HousingLocation } from './housing-location';
+import { AnotherHousingLocation } from './another-housing-location';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,9 @@ import { HousingLocation } from './housing-location';
 export class AppComponent {
   title = 'fairhouse';
 
-  housingLocationList: HousingLocation[] = [
+  selectedLocation: AnotherHousingLocation | undefined;
+
+  housingLocationList: AnotherHousingLocation[] = [
     {
       name: "Acme Fresh Start Housing",
       city: "Chicago",
@@ -39,9 +41,9 @@ export class AppComponent {
     }
   ];
 
-  selectedLocation: HousingLocation | undefined;// = this.housingLocationList[0];
-
-  updateSelectedLocation(location: HousingLocation) {
-    this.selectedLocation = location;
-  }
+  updateSelectedLocation(location: AnotherHousingLocation) {
+    this.selectedLocation = location
+  } 
+  
+  searchHousingLocations() {}
 }
